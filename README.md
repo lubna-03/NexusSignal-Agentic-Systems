@@ -20,7 +20,15 @@ Multi-Channel Enrichment (find_contacts.py): A waterfall agent leveraging Snov.i
 
 Trade-offs & Decisions (Non-Negotiable)In line with the hiring philosophy, this project prioritizes Reliability and Systems Thinking:Cost vs. Accuracy: Utilized Gemini 1.5 Flash for high-volume pitch generation to minimize latency while reserving Gemini 1.5 Pro for the complex technical audit phase.Fail-Safe Logic: Implemented a template fallback engine to ensure 100% pitch coverage despite API or quota limitations.Agentic Tone: Engineered system prompts to mirror a Senior Architect's tone, focusing on technical consultation instead of sales templates.
 
-📊 Final Project MetricsMetricAchievementTotal Audit Pool98+ Targeted Mid-Market FirmsElite GOLD Leads25+ (Verified Founders/MDs)Direct Reach (P1)43 High-priority phone numbersOutreach Ready (P2)55 Email-verified leads🚀 Execution PipelineTo run the full agentic workflow, execute the following commands in order:Bash
+📊 Final Project Metrics
+Metric,           Achievement
+Total Audit Pool,98+ Targeted Mid-Market Firms
+Elite GOLD Leads,25+ (Verified Founders/MDs)
+Direct Reach (P1),43 High-priority phone numbers
+Outreach Ready (P2),55 Email-verified leads
+
+
+🚀 Execution PipelineTo run the full agentic workflow, execute the following commands in order:Bash
 # 1. Install dependencies 
 pip install -r requirements.txt
 
