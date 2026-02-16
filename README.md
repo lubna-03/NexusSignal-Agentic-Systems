@@ -1,46 +1,40 @@
 # NexusSignal-Agentic-Systems
-NexusSignal is an end-to-end Agentic AI System designed to identify high-intent B2B prospects by detecting technical "migration signals". Moving beyond generic outreach, this system scans mid-market sectors (Manufacturing, Exports, Logistics) to identify legacy tech debt and generates human-grade, architect-level pitches for founders.
+An Agentic AI System that finds technical debt and generates 1-on-1 sales pitches.
 
-NexusSignal-Agentic-System/
-├── src/          # Core Agent Logic (The Engine)
-├── research/     # API Experiments & Model Comparisons (Gemini 1.5 vs 2.0)
-├── data/         # Final Audits, Database Backups, and Master Reports
-├── leads.db      # SQLite Central Intelligence
-├── .env          # API Credentials (Excluded via .gitignore)
-└── README.md     # Documentation & Systems Thinking
+NexusSignal isn't a scraper; it’s a Senior Solutions Architect in a box. It scans the web for Indian ecommerce startups (10-50 employees), identifies outdated tech stacks (like legacy PHP or Magento), and drafts professional pitches to help them modernize. 
+The 4-Step Pipeline
+The system runs as a sequential engine to ensure 100% data accuracy.
+Lead Fetch (Apollo API): Sources high-growth startups in Bengaluru, Mumbai, and Gurgaon.
+Tech Audit : Detects "Pain Signals" like slow site speeds or legacy infrastructure.
+Enrichment (Waterfall API): Uses Snov.io and Hunter.io to find verified Founder/CTO contact info.
+AI Pitch (Gemini 2.0 Flash): Generates 3-sentence, "no-fluff" pitches tailored to their specific tech debt.
 
-Technical Workflow
-The system operates as a sequential pipeline, transforming raw market data into high-conversion sales opportunities:
+The Stack
+Brain: Google Gemini 2.0 Flash (Native Python SDK — No LangChain overhead).
+Data: SQLite (leads.db) & Pandas for Excel reporting.
+Intelligence: Apollo, Snov.io, and Hunter.io for multi-layer verification.
 
-Lead Ingestion (fetch_live_leads.py): Targets "Practical" Indian SMBs (20-100 employees) in major industrial hubs using the Apollo API.
+Project Structure
+├── src/             # Master Engine & Pitch Generator
+├── research/        # Model benchmarks (Gemini 1.5 vs 2.0)
+├── data/            # Final Excel Audits & SQLite DB
+└── .env             # API Keys (Protected)
 
-Technical Audit (detect_tech_free.py): Scans for "Pain Signals"—legacy tech, slow mobile response, or site downtime.
+Results at a Glance
+Metric,Achievement
+Total Audit Pool,98+ Mid-Market Firms
+Elite GOLD Leads,25+ (Verified Founders + Tech Debt)
+Direct Reach,43 Leads with verified phone numbers
+AI Efficiency,100% Pitch coverage (Zero fluff))
 
-Multi-Channel Enrichment (find_contacts.py): A waterfall agent leveraging Snov.io, Hunter.io, and Apollo.io to secure direct Founder/MD contact details.
-
-Trade-offs & Decisions (Non-Negotiable)In line with the hiring philosophy, this project prioritizes Reliability and Systems Thinking:Cost vs. Accuracy: Utilized Gemini 1.5 Flash for high-volume pitch generation to minimize latency while reserving Gemini 1.5 Pro for the complex technical audit phase.Fail-Safe Logic: Implemented a template fallback engine to ensure 100% pitch coverage despite API or quota limitations.Agentic Tone: Engineered system prompts to mirror a Senior Architect's tone, focusing on technical consultation instead of sales templates.
-
-📊 Final Project Metrics
-Metric,           Achievement
-Total Audit Pool,98+ Targeted Mid-Market Firms
-Elite GOLD Leads,25+ (Verified Founders/MDs)
-Direct Reach (P1),43 High-priority phone numbers
-Outreach Ready (P2),55 Email-verified leads
-
-
-🚀 Execution PipelineTo run the full agentic workflow, execute the following commands in order:Bash
-# 1. Install dependencies 
+Quick Start
+Bash# Install requirements
 pip install -r requirements.txt
 
-# 2. Execute the sequential Agent steps
-python src/fetch_live_leads.py
-python src/detect_tech_free.py
-python src/find_contacts.py
-python src/generate_pitches.py
-python src/final_consolidator.py
+# Run the pipeline
+python D:/fetch_live_leads.py
+python D:/detect_tech_free.py
+python C:/src/find_contacts.py
+python C:/src/master_finalizer.py
 
-🏅 The "Grand Master" ArtifactThe system produces NexusSignal_Master_Audit_2026.xlsx, a color-coded dashboard:GOLD: Elite targets with full contact density and custom pitches.YELLOW: Verified direct leads for technical modernization.BLUE: Growth-stage audits for long-term nurturing.
-
-Humanized Pitch Engine (generate_pitches.py): Uses Gemini 1.5 Flash to draft peer-to-peer technical roadmaps, strictly avoiding "AI-isms" or sales fluff.
-
-Master Consolidation (final_consolidator.py): Generates a styled, dashboard-grade Excel report with automated outreach tiering.
+Unique ValueWaterfall Logic: If one API fails to find a contact, the system automatically triggers the next.Zero-Fluff AI: Banned words like "Unlock" or "Leverage" to ensure pitches sound human.
